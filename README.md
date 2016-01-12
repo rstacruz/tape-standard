@@ -1,6 +1,8 @@
 # tape-standard
 
-**Integrates [standard] into your tape tests.** This allows you to enforce a "one true" JavaScript coding style in your project via [tape][] tests.
+> Integrates [standard] into your tape tests
+
+tape-standard allows you to enforce a "one true" JavaScript coding style in your project via [tape][] tests.
 
 ![](https://raw.githubusercontent.com/rstacruz/tape-standard/gh-pages/screenshot.png)
 
@@ -10,7 +12,7 @@
 
 This offers a finer alternative to adding *standard* into package.json's `scripts.test` block.
 
-* Runs in the same node process as mocha, removing maybe 500ms of startup time.
+* Runs in the same node process as tape, removing maybe 500ms of startup time.
 * Painlessly integrate standard into your travisci.org tests.
 
 (Your speed gains may be a bit different from my Pentium II, of course.)
@@ -23,7 +25,7 @@ Install it:
 npm install --save-dev tape-standard standard
 ```
 
-Then add this test file to your Mocha suite:
+Then add this test file to your tape suite:
 
 ```jsj
 test('standard', require('tape-standard')())
@@ -39,7 +41,7 @@ test('standard', require('tape-standard')({
 
 ## Globals
 
-To specify global variables, pass `{ global: [...] }` into `.files()`. This is especially useful for Mocha test files. (Be sure you're using standard 5.0.0 or above.)
+To specify global variables, pass `{ global: [...] }` into `.files()`. This is especially useful for test files. (Be sure you're using standard 5.0.0 or above.)
 
 ```js
 test('standard', require('tape-standard')({
@@ -64,6 +66,12 @@ test('standard', require('tape-standard')({
 [semistandard]: https://github.com/Flet/semistandard
 [standard]: https://www.npmjs.com/package/standard
 [tape]: https://github.com/substack/tape
+
+## tape-eslint
+
+For more flexible configuration, consider [tape-eslint] too, which can be configured to use Standard's configuration.
+
+[tape-eslint]: https://github.com/rstacruz/tape-eslint
 
 ## Thanks
 
